@@ -62,7 +62,7 @@ P=scripts/receipt.py
 python -X utf8 $P init --root $R --title "重构登录模块"
 python -X utf8 $P add --root $R --id c1 --claim "登录页文件存在" --check file_exists --path src/login.py
 python -X utf8 $P add --root $R --id c2 --claim "不再使用旧接口" --check file_contains --path src/login.py --text "def sign_in"
-python -X utf8 $P add --root $R --id c3 --claim "测试通过" --check command --cmd "python -m unittest discover -s tests" --required
+python -X utf8 $P add --root $R --id c3 --claim "测试通过" --check command --cmd "python -m unittest discover -s tests"
 
 # 2. 干活。AI 声称完成时只记录声明，不算验收
 python -X utf8 $P attest --root $R --id c2 --note "已替换旧接口（AI 自述，待复验）"
