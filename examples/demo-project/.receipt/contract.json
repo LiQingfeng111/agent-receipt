@@ -1,0 +1,47 @@
+{
+  "format_version": 1,
+  "title": "示例：季度报告生成",
+  "created": "2026-11-11 23:19:13",
+  "items": [
+    {
+      "id": "c1",
+      "claim": "报告文件已交付",
+      "required": true,
+      "check": {
+        "type": "file_exists",
+        "path": "report.md"
+      }
+    },
+    {
+      "id": "c2",
+      "claim": "包含结论章节",
+      "required": true,
+      "check": {
+        "type": "file_contains",
+        "path": "report.md",
+        "text": "## 结论"
+      }
+    },
+    {
+      "id": "c3",
+      "claim": "无占位符残留",
+      "required": true,
+      "check": {
+        "type": "file_contains",
+        "path": "report.md",
+        "text": "待补充",
+        "absent": true
+      }
+    },
+    {
+      "id": "c4",
+      "claim": "正文不少于 30 汉字",
+      "required": true,
+      "check": {
+        "type": "min_han",
+        "path": "report.md",
+        "min": 30
+      }
+    }
+  ]
+}

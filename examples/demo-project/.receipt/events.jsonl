@@ -1,0 +1,8 @@
+{"at": "2026-11-11 23:19:13", "event": "init", "title": "示例：季度报告生成"}
+{"at": "2026-11-11 23:19:13", "event": "add", "id": "c1", "check": "file_exists"}
+{"at": "2026-11-11 23:19:14", "event": "add", "id": "c2", "check": "file_contains"}
+{"at": "2026-11-11 23:19:14", "event": "add", "id": "c3", "check": "file_contains"}
+{"at": "2026-11-11 23:19:15", "event": "add", "id": "c4", "check": "min_han"}
+{"at": "2026-11-11 23:19:34", "event": "attest", "id": "c2"}
+{"at": "2026-11-11 23:19:35", "event": "verify", "overall": "PASS", "counts": {"PASS": 4, "FAIL": 0, "UNVERIFIED": 0, "STALE": 0}}
+{"at": "2026-11-11 23:19:35", "event": "handoff", "next": "复核分渠道归因口径，再重跑 verify"}

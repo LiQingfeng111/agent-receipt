@@ -1,0 +1,79 @@
+{
+  "format_version": 1,
+  "title": "示例：季度报告生成",
+  "verified_at": "2026-11-11 23:19:35",
+  "overall": "PASS",
+  "counts": {
+    "PASS": 4,
+    "FAIL": 0,
+    "UNVERIFIED": 0,
+    "STALE": 0
+  },
+  "results": [
+    {
+      "id": "c1",
+      "claim": "报告文件已交付",
+      "required": true,
+      "check": "file_exists",
+      "status": "PASS",
+      "evidence": "report.md 存在",
+      "detail": "",
+      "artifacts": [
+        {
+          "path": "report.md",
+          "sha256": "d3f4e2f5f97f35612c4b0c4517f65bfeb1efd237b9211ede6ed506fb0f639c62"
+        }
+      ],
+      "checked_at": "2026-11-11 23:19:35"
+    },
+    {
+      "id": "c2",
+      "claim": "包含结论章节",
+      "required": true,
+      "check": "file_contains",
+      "status": "PASS",
+      "evidence": "report.md：命中 文本 '## 结论'",
+      "detail": "",
+      "artifacts": [
+        {
+          "path": "report.md",
+          "sha256": "d3f4e2f5f97f35612c4b0c4517f65bfeb1efd237b9211ede6ed506fb0f639c62"
+        }
+      ],
+      "checked_at": "2026-11-11 23:19:35"
+    },
+    {
+      "id": "c3",
+      "claim": "无占位符残留",
+      "required": true,
+      "check": "file_contains",
+      "status": "PASS",
+      "evidence": "report.md：命中 不应出现 文本 '待补充'",
+      "detail": "",
+      "artifacts": [
+        {
+          "path": "report.md",
+          "sha256": "d3f4e2f5f97f35612c4b0c4517f65bfeb1efd237b9211ede6ed506fb0f639c62"
+        }
+      ],
+      "checked_at": "2026-11-11 23:19:35"
+    },
+    {
+      "id": "c4",
+      "claim": "正文不少于 30 汉字",
+      "required": true,
+      "check": "min_han",
+      "status": "PASS",
+      "evidence": "汉字数 198 / 要求 ≥ 30（排除 frontmatter 与注释）",
+      "detail": "",
+      "artifacts": [
+        {
+          "path": "report.md",
+          "sha256": "d3f4e2f5f97f35612c4b0c4517f65bfeb1efd237b9211ede6ed506fb0f639c62"
+        }
+      ],
+      "checked_at": "2026-11-11 23:19:35"
+    }
+  ],
+  "note": "派生结果，可重建；冲突时以重新 verify 为准。AI 自述不参与判定。"
+}
